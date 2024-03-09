@@ -1,0 +1,81 @@
+.thumbnail-bar {
+    width: inherit;
+}
+
+.thumbnail-container {
+    position: relative;
+    justify-content: space-between;
+    display: flex;
+    gap: 10px;
+    width: inherit;
+    box-sizing: border-box;
+}
+
+.left {
+    flex: 2;
+    display: flex;
+    justify-content: end;
+    gap: 25px;
+    opacity: 0.5;
+}
+
+.right {
+    flex: 2;
+    display: flex;
+    opacity: 0.5;
+    justify-content: start;
+    gap: 25px
+}
+
+.selected {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    left: 0px;
+    right: 0px;
+    top: -10px;
+    filter: drop-shadow(2px 2px 2px #ffffff);
+}
+
+.speedControl {
+    position: absolute;
+    border: 1px solid white;
+    background: gray;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 13px;
+    margin: 0px;
+    padding: 0 0 20px 0;
+    color: white;
+}
+
+.chevron {
+    position: relative;
+    top: 25px;
+    padding: 0px 10px;
+    height: 20px;
+    border: none;
+    background: none;
+    transform: scale(2, 5);
+    /* Safari and Chrome */
+    -webkit-transform: scale(2, 5);
+    /* Firefox */
+    -moz-transform: scale(2, 5);
+    /* IE 9+ */
+    -ms-transform: scale(2, 5);
+    /* Opera */
+    -o-transform: scale(2, 5);
+}
+
+
+.chevron:hover {
+    color: lightblue
+}
+
+.chevron:focus {
+    outline: none
+}

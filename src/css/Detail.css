@@ -1,0 +1,38 @@
+.detail {
+    margin: 0px 2%;
+
+}
+
+.backLink {
+    position: fixed;
+    background-color: darkblue;
+    font-weight: bold;
+    color: lightgray;
+    padding: 4px 6px;
+    border-radius: 5px;
+    left: 10px;
+    top: 10px;
+}
+
+.backLink:hover {
+    top: 8px;
+    filter: drop-shadow(2px 2px 2px #ffffff);
+    color: white;
+}
+
+.detailImage {
+    height: 768px;
+    width: auto;
+}
+
+.imageData {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.imageData div {
+    flex: 1;
+    border: 1px solid darkgray;
+    padding: 1px 10px
+}
