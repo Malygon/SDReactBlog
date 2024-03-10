@@ -83,6 +83,7 @@ export default function ThumbnailBar({ images, thumbnailHeight, slidingTime, sid
 
     return (
         <div className="thumbnail-bar">
+            {!thumbnails && <h3>Loading thumbnails...</h3>}
             {thumbnails && components && (
                 <div className="thumbnail-container">
                     <div className="left">{components.left}</div>

@@ -1,32 +1,42 @@
 [
     {
         "name": "None",
-        "buttonClass": "none-button",
         "filter": "none"
     },
     {
         "name": "Grayscale",
-        "buttonClass": "grayscale-button",
         "filter": "grayscale(100%)"
     },
     {
         "name": "Sepia",
-        "buttonClass": "sepia-button",
         "filter": "sepia(100%)"
     },
     {
         "name": "Invert",
-        "buttonClass": "invert-button",
         "filter": "invert(100)"
     },
     {
         "name": "Watercolor",
-        "buttonClass": "watercolor-button",
         "filter": "brightness(1.3) invert(0.17) saturate(2.6) sepia(0.25)"
     },
     {
         "name": "Vintage",
-        "buttonClass": "vintage-button",
         "filter": "brightness(105%)  grayscale(100%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(50%)"
+    },
+    {
+        "name": "Summer",
+        "filter": "brightness(103%) contrast(114%) grayscale(0%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(122%) sepia(0%)"
+    },
+    {
+        "name": "Album Cover",
+        "filter": "contrast(134%) brightness(100%) grayscale(46%) saturate(280%) hue-rotate(326deg) sepia(30%)  invert(1%) blur(0px)"
+    },
+    {
+        "name": "Faded",
+        "filter": "contrast(73%) brightness(100%) grayscale(56%) saturate(100%) hue-rotate(19deg) sepia(11%)  invert(0%) blur(0px)"
+    },
+    {
+        "name": "Blur",
+        "filter": "blur(2px)"
     }
 ]

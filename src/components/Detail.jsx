@@ -59,6 +59,7 @@ export default function Detail({ smallScreen }) {
                 <h2>{data.title}</h2>
                 <h3>{detailImageData.title}</h3>
                 <div className="detail-image-container">
+                    {!detailImage && <h3>Loading image...</h3>}
                     {detailImage && <img className="detail-image" src={detailImage} />}
                 </div>
                 <p>{data.comment}</p>

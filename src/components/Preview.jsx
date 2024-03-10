@@ -50,6 +50,7 @@ export default function Preview({ images, smallScreen }) {
         {images && (<div className="preview">
             <h3>{selectedImage && selectedImage.title}</h3>
             <div className="preview-container">
+                {!previewImage && <h3>Loading image....</h3>}
                 {previewImage && <img src={previewImage} onClick={() => navigation("/detail", { state: { imageData: selectedImage } })} />}
                 <p>{selectedImage && selectedImage.abstract}</p>
             </div>

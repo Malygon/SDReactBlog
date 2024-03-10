@@ -96,5 +96,70 @@
             "negativePrompt": "painting, digital art, blurry, watermark, text",
             "generationInfo": "Steps: 20, Sampler: DPM++ 2M Karras, CFG scale: 7, Seed: 1497313977, Size: 1024x1024, Model hash: e6bb9ea85b, Model: sd_xl_base_1.0_0.9vae, Refiner: sd_xl_refiner_1.0_0.9vae [8d0ce6c016], Refiner switch at: 0.8, Version: v1.8.0"
         }
+    },
+    {
+        "title": "Sampler Step Comparison",
+        "abstract": "An experiment where the step size of the image was swapped to test out the differences",
+        "type": "comparison",
+        "comment": "There is always some debate about parameters, which CFG scale is best, what sampler is best, what step size is best. Experiments like this can help test this out. I did 5 of the same image, swapping out the step size for each image. Which do you find best?",
+        "images": [
+            {
+                "name": "00009-2009125507.png",
+                "title": "An astronaut on a horse - 10 Steps",
+                "prompt": "photo of a an astronaut riding a horse on the moon, planet earth in the background, lensflair, ultra-realistic, 8k, 4k, best quality",
+                "negativePrompt": "blurry, watermark, text, painting",
+                "generationInfo": "Steps: 10, Sampler: DPM++ 2M Karras, CFG scale: 7, Seed: 2009125507, Size: 1024x1024, Model hash: e6bb9ea85b, Model: sd_xl_base_1.0_0.9vae, Refiner: sd_xl_refiner_1.0_0.9vae [8d0ce6c016], Refiner switch at: 0.8"
+            },
+            {
+                "name": "00010-2009125507.png",
+                "title": "An astronaut on a horse - 20 Steps",
+                "prompt": "photo of a an astronaut riding a horse on the moon, planet earth in the background, lensflair, ultra-realistic, 8k, 4k, best quality",
+                "negativePrompt": "blurry, watermark, text, painting",
+                "generationInfo": "Steps: 20, Sampler: DPM++ 2M Karras, CFG scale: 7, Seed: 2009125507, Size: 1024x1024, Model hash: e6bb9ea85b, Model: sd_xl_base_1.0_0.9vae, Refiner: sd_xl_refiner_1.0_0.9vae [8d0ce6c016], Refiner switch at: 0.8"
+            },
+            {
+                "name": "00011-2009125507.png",
+                "title": "An astronaut on a horse - 30 Steps",
+                "prompt": "photo of a an astronaut riding a horse on the moon, planet earth in the background, lensflair, ultra-realistic, 8k, 4k, best quality",
+                "negativePrompt": "blurry, watermark, text, painting",
+                "generationInfo": "Steps: 30, Sampler: DPM++ 2M Karras, CFG scale: 7, Seed: 2009125507, Size: 1024x1024, Model hash: e6bb9ea85b, Model: sd_xl_base_1.0_0.9vae, Refiner: sd_xl_refiner_1.0_0.9vae [8d0ce6c016], Refiner switch at: 0.8"
+            },
+            {
+                "name": "00012-2009125507.png",
+                "title": "An astronaut on a horse - 40 Steps",
+                "prompt": "photo of a an astronaut riding a horse on the moon, planet earth in the background, lensflair, ultra-realistic, 8k, 4k, best quality",
+                "negativePrompt": "blurry, watermark, text, painting",
+                "generationInfo": "Steps: 40, Sampler: DPM++ 2M Karras, CFG scale: 7, Seed: 2009125507, Size: 1024x1024, Model hash: e6bb9ea85b, Model: sd_xl_base_1.0_0.9vae, Refiner: sd_xl_refiner_1.0_0.9vae [8d0ce6c016], Refiner switch at: 0.8"
+            },
+            {
+                "name": "00013-2009125507.png",
+                "title": "An astronaut on a horse - 50 Steps",
+                "prompt": "photo of a an astronaut riding a horse on the moon, planet earth in the background, lensflair, ultra-realistic, 8k, 4k, best quality",
+                "negativePrompt": "blurry, watermark, text, painting",
+                "generationInfo": "Steps: 50, Sampler: DPM++ 2M Karras, CFG scale: 7, Seed: 2009125507, Size: 1024x1024, Model hash: e6bb9ea85b, Model: sd_xl_base_1.0_0.9vae, Refiner: sd_xl_refiner_1.0_0.9vae [8d0ce6c016], Refiner switch at: 0.8"
+            }
+        ]
+    },
+    {
+        "title": "Inpainting Comparison",
+        "abstract": "Trying out inpainting, since I had trouble with this function in previous versions of Stable Diffusion",
+        "type": "comparison",
+        "comment": "Inpainting is a mighty tool. Being able to add details to pictures or remove artifacts and errors makes image generation much more rewarding. I've had some troubles with this function before. Often, transitions between inpainted and non-inpainted areas wouldn't be seamless and you could see a clear line. This was my first time trying out inpainting with SDXL1.0 and it went pretty smoothly. Rats are cool, but rats with hats are awesome!",
+        "images": [
+            {
+                "name": "00015-2009125507.png",
+                "title": "A cool rat",
+                "prompt": "photo of a cute pet rat exploring, having fun, playing, sharp, 8k, best quality",
+                "negativePrompt": "blurry, watermark, text, painting",
+                "generationInfo": "Steps: 30, Sampler: Heun, CFG scale: 7, Seed: 2009125507, Size: 1024x1024, Model hash: e6bb9ea85b, Model: sd_xl_base_1.0_0.9vae, Refiner: sd_xl_refiner_1.0_0.9vae [8d0ce6c016], Refiner switch at: 0.8, Version: v1.8.0"
+            },
+            {
+                "name": "00007-1979227312.png",
+                "title": "A cooler rat with a hat!",
+                "prompt": "photo of a cute pet rat exploring, wearing a stylish miniature cowboy hat, having fun, playing, sharp, 8k, best quality",
+                "negativePrompt": "blurry, watermark, text, painting",
+                "generationInfo": "Steps: 30, Sampler: DPM++ 2M Karras, CFG scale: 12, Seed: 1979227312, Size: 1024x1024, Model hash: e6bb9ea85b, Model: sd_xl_base_1.0_0.9vae, Denoising strength: 0.78, Mask blur: 11, Version: v1.8.0"
+            }
+        ]
     }
 ]

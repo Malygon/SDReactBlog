@@ -11,6 +11,12 @@
     box-sizing: border-box;
 }
 
+.thumbnail-container img {
+    max-width: 100%;
+    max-height: auto;
+    height: auto;
+}
+
 .left {
     flex: 2;
     display: flex;
@@ -28,7 +34,7 @@
 }
 
 .selected {
-    flex: 1;
+    flex: 2;
     display: flex;
     justify-content: center;
     left: 0px;
