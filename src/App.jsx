@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 function App() {
   const { data: images, error, isPending } = useFetch("data/imgData.json");
   const [smallScreen, setSmallScreen] = useState(
-    window.matchMedia("(min-width: 768px)").matches
+    window.matchMedia("(max-width: 768px)").matches
   );
 
   useEffect(() => {
