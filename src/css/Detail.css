@@ -1,5 +1,17 @@
 .detail {
     margin: 0px 2%;
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+detail-image-container {
+    flex: 1;
+    display: flex;
+}
+
+.detail-image {
+    max-width: 80%;
 }
 
 .backLink {
@@ -29,4 +41,11 @@
     flex: 1;
     border: 1px solid darkgray;
     padding: 1px 10px
+}
+
+@media (max-width: 600px) {
+    .imageData {
+        display: flex;
+        flex-direction: column;
+    }
 }

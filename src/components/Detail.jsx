@@ -58,7 +58,9 @@ export default function Detail({ smallScreen }) {
             <div className="detail">
                 <h2>{data.title}</h2>
                 <h3>{detailImageData.title}</h3>
-                {detailImage && <img className="detailImage" src={detailImage} />}
+                <div className="detail-image-container">
+                    {detailImage && <img className="detail-image" src={detailImage} />}
+                </div>
                 <p>{data.comment}</p>
                 <div className="imageData">
                     <div>

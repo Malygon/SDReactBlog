@@ -52,6 +52,8 @@
     margin: 0px;
     padding: 0 0 20px 0;
     color: white;
+    filter: none;
+    filter: drop-shadow(0 0 2px white);
 }
 
 .chevron {
@@ -62,6 +64,7 @@
     border: none;
     background: none;
     transform: scale(2, 5);
+    color: white;
     /* Safari and Chrome */
     -webkit-transform: scale(2, 5);
     /* Firefox */
