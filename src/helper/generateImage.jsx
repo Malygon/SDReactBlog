@@ -1,4 +1,4 @@
-export default function generateImage(image, scaleHorizontal, size, setImage) {
+export default function generateImage(image, scaleHorizontal, size, setImage, filter) {
     let canvas = document.createElement("canvas");
     let context = canvas.getContext("2d");
     let loadedImage = new Image();
@@ -15,7 +15,11 @@ export default function generateImage(image, scaleHorizontal, size, setImage) {
             let ratio = size / loadedImage.width;
             canvas.height = loadedImage.height * ratio;
         }
+        if (filter) {
+            context.filter = filter;
+        }
         context.drawImage(loadedImage, 0, 0, canvas.width, canvas.height);
+
         setImage(canvas.toDataURL("image/png"));
     }
 }

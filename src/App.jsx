@@ -3,18 +3,29 @@ import useFetch from './hooks/useFetch'
 import Preview from './components/Preview';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Detail from './components/Detail';
+import { useEffect, useState } from 'react';
 
 function App() {
   const { data: images, error, isPending } = useFetch("data/imgData.json");
+  const [smallScreen, setSmallScreen] = useState(
+    window.matchMedia("(min-width: 768px)").matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia("(max-width: 768px)")
+      .addEventListener("change", e => setSmallScreen(e.matches));
+  });
+
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Preview images={images} />
+      element: <Preview images={images} smallScreen={smallScreen} />
     },
     {
       path: "/detail",
-      element: <Detail />
+      element: <Detail smallScreen={smallScreen} />
     }
   ]);
 

@@ -2,21 +2,36 @@ import { useEffect, useState } from "react"
 import ThumbnailBar from "./ThumbnailBar";
 import { Link, useLocation } from "react-router-dom";
 import "../css/Detail.css";
+import generateImage from "../helper/generateImage";
+import FilterSelector from "./FilterSelector";
+import PropTypes from "prop-types";
 
-export default function Detail() {
+Detail.propTypes = {
+    smallScreen: PropTypes.bool
+}
+
+Detail.defaultProps = {
+    smallScreen: false
+}
+
+export default function Detail({ smallScreen }) {
     const location = useLocation();
     const [data, setData] = useState(null);
+    const [detailImageData, setDetailImageData] = useState(null);
     const [detailImage, setDetailImage] = useState(null);
     const [images, setImages] = useState(null);
     const [selectedIndex, setSelectedIndex] = useState(0);
+    const [filter, setFilter] = useState(null);
+    const [imageSize, setImageSize] = useState(smallScreen ? 400 : 800);
+    const [sideThumbnails, setSideThumbnails] = useState(smallScreen ? 1 : 2);
 
     useEffect(() => {
-        if (data || selectedIndex) {
+        if (data) {
             if (data.type == "single") {
-                setDetailImage(data.image);
+                setDetailImageData(data.image);
             }
             else if (data.type == "comparison") {
-                setDetailImage(data.images[selectedIndex]);
+                setDetailImageData(data.images[selectedIndex]);
                 setImages(data.images);
             }
         }
@@ -26,31 +41,43 @@ export default function Detail() {
         setData(location.state?.imageData ?? null);
     }, [location]);
 
+    useEffect(() => {
+        if (detailImageData) {
+            generateImage(detailImageData, true, imageSize, setDetailImage, filter);
+        }
+    }, [detailImageData, imageSize, filter])
+
+    useEffect(() => {
+        setSideThumbnails(smallScreen ? 1 : 2);
+        setImageSize(smallScreen ? 400 : 800);
+    }, [smallScreen])
 
     return <><Link className="backLink" to="/">Back to the overview</Link>
-        {data && detailImage &&
+        <FilterSelector setFilter={setFilter} />
+        {data && detailImageData &&
             <div className="detail">
                 <h2>{data.title}</h2>
-                <img className="detailImage" src={"/img/" + detailImage.name} />
+                <h3>{detailImageData.title}</h3>
+                {detailImage && <img className="detailImage" src={detailImage} />}
                 <p>{data.comment}</p>
                 <div className="imageData">
                     <div>
                         <h3>Prompt</h3>
-                        <p>{detailImage.prompt}</p>
+                        <p>{detailImageData.prompt}</p>
                     </div>
                     <div>
                         <h3>Negative Prompt</h3>
-                        <p>{detailImage.negativePrompt}</p>
+                        <p>{detailImageData.negativePrompt}</p>
                     </div>
                     <div>
                         <h3>Generation Information</h3>
-                        <p>{detailImage.generationInfo}</p>
+                        <p>{detailImageData.generationInfo}</p>
                     </div>
                 </div>
                 {images && <ThumbnailBar
                     images={images}
                     thumbnailHeight={100}
-                    sideThumbnails={1}
+                    sideThumbnails={sideThumbnails}
                     selectedIndex={selectedIndex}
                     setSelectedIndex={setSelectedIndex} />}
             </div>

@@ -7,17 +7,19 @@ import { useNavigate } from "react-router-dom";
 
 Preview.propTypes = {
     images: PropTypes.array,
-    previewSize: PropTypes.number
+    smallScreen: PropTypes.bool
 }
 
 Preview.defaultProps = {
-    previewSize: 400
+    smallScreen: false
 }
 
-export default function Preview({ images, previewSize }) {
+export default function Preview({ images, smallScreen }) {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [selectedImage, setSelectedImage] = useState(null);
     const [previewImage, setPreviewImage] = useState(null);
+    const [previewSize, setPreviewSize] = useState(smallScreen ? 300 : 400);
+    const [sideThumbnails, setSideThumbnails] = useState(smallScreen ? 1 : 2);
     const navigation = useNavigate();
 
     useEffect(() => {
@@ -37,6 +39,11 @@ export default function Preview({ images, previewSize }) {
         }
     }, [selectedImage, previewSize])
 
+    useEffect(() => {
+        setPreviewSize(smallScreen ? 350 : 700);
+        setSideThumbnails(smallScreen ? 1 : 2);
+    }, [smallScreen])
+
     return <>
         <h2>Stable Diffusion Blog</h2>
         <p>Check out this little Stable diffusion blog, click on the preview Image to learn more! </p>
@@ -49,7 +56,7 @@ export default function Preview({ images, previewSize }) {
             <ThumbnailBar
                 images={images}
                 thumbnailHeight={100}
-                sideThumbnails={2}
+                sideThumbnails={sideThumbnails}
                 selectedIndex={selectedIndex}
                 setSelectedIndex={setSelectedIndex} />
         </div>)

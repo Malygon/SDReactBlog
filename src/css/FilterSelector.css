@@ -1,0 +1,34 @@
+.filter-selector {
+    position: fixed;
+    left: 10px;
+    top: 55px;
+}
+
+.show-filters {
+    margin-bottom: 5px;
+}
+
+.filter-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-selector button {
+    position: relative;
+    background-color: darkcyan;
+    padding: 10px;
+    font-weight: bold;
+    color: lightgray;
+    padding: 4px 6px;
+    border-radius: 5px;
+    border: none;
+}
+
+.filter-selector button:hover {
+    top: -2px;
+    filter: drop-shadow(2px 2px 2px #ffffff);
+    color: white;
+    outline: none;
+    border: none;
+}

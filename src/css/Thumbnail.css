@@ -39,6 +39,7 @@
 
 .speedControl {
     position: absolute;
+    bottom: -30px;
     border: 1px solid white;
     background: gray;
     border-radius: 50%;

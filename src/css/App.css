@@ -19,6 +19,18 @@
   align-items: center;
 }
 
+.preview-container img {
+  position: relative;
+  ;
+}
+
+.preview-container img:hover {
+  border: 1px solid gray;
+  filter: drop-shadow(4px 4px 4px white);
+  top: -2px;
+  cursor: pointer;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
